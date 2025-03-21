@@ -14,15 +14,18 @@
 //$grey-dark: #211F22;
 //$black: #000000;
 
-$grey-dark: #14161A;
-$grey-light: #315659;
-$blue-dark: #2978A0;
-$blue-light: #C6E0FF;
-$beige-dark: #BCAB79;
+$grey-dark: #282828;
+$grey-light: #ebdbb2;
+$blue-dark: #458588;
+$blue-light: #83a598;
+$beige-dark: #665c54;
 $beige-light: #EBEBD3;
-$red-light: #FE5F55;
-$red-dark: #C5283D;
-$green-light: #4CB963;
+$red-light: #cc241d;
+$red-dark: #fb4934;
+$green-light: #b8bb26;
+$green-dark: #98971a;
+$yellow-dark: #d79921;
+$yellow-light: #fabd2f;
 
 
 // Path to Bulma's sass folder
@@ -50,6 +53,11 @@ $green-light: #4CB963;
     text-decoration: none;
 }
 
+#logo:hover {
+    background-color: transparent;
+    color: $beige-light;
+}
+
 a.navbar-item:hover {
     background-color: transparent;
     color: $beige-light;
@@ -57,7 +65,7 @@ a.navbar-item:hover {
 
 a.navbar-item.is-active{
     background-color: transparent; 
-    color: $red-light;
+    color: $red-dark;
 }
 
 .content {
@@ -89,7 +97,7 @@ h1.section-title {
 }
 
 h3.section-subtitle {
-    color: $beige-light;
+    color: $yellow-dark;
 }
 
 .title {
@@ -97,7 +105,7 @@ h3.section-subtitle {
 }
 
 ::selection {
-    background: $red-light;
+    background: $red-dark;
     color: white;
 }
 
