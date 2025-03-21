@@ -1,39 +1,14 @@
 @charset "utf-8";
 
-<<<<<<< HEAD
-// Import a Google Font
-//@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-// Set your brand colors
-//$red: #C1292E;
-//$green: #0CCE6B;
-//$yellow: #F1D302;
-//$blue: #7D82B8;
-//$orange: #ED7D3A;
-//$grey-light: #777777;
-//$white: #FDFFFC;
-//$grey-dark: #211F22;
-//$black: #000000;
-
-$grey-dark: #282828;
-$grey-light: #ebdbb2;
-$blue-dark: #458588;
-$blue-light: #83a598;
-$beige-dark: #665c54;
-=======
 $grey-dark: #14161A;
 $grey-light: #315659;
 $blue-dark: #2978A0;
 $blue-light: #C6E0FF;
 $beige-dark: #BCAB79;
->>>>>>> f061f847abb4a2678cf0e32ff31bc7a7b1429af0
 $beige-light: #EBEBD3;
-$red-light: #cc241d;
-$red-dark: #fb4934;
-$green-light: #b8bb26;
-$green-dark: #98971a;
-$yellow-dark: #d79921;
-$yellow-light: #fabd2f;
+$red-light: #FE5F55;
+$red-dark: #C5283D;
+$green-light: #4CB963;
 
 
 // Path to Bulma's sass folder
@@ -61,11 +36,6 @@ $yellow-light: #fabd2f;
     text-decoration: none;
 }
 
-#logo:hover {
-    background-color: transparent;
-    color: $beige-light;
-}
-
 a.navbar-item:hover {
     background-color: transparent;
     color: $beige-light;
@@ -73,7 +43,7 @@ a.navbar-item:hover {
 
 a.navbar-item.is-active{
     background-color: transparent; 
-    color: $red-dark;
+    color: $red-light;
 }
 
 .content {
@@ -105,7 +75,7 @@ h1.section-title {
 }
 
 h3.section-subtitle {
-    color: $yellow-dark;
+    color: $beige-light;
 }
 
 .title {
@@ -118,7 +88,7 @@ h1.post-title {
 }
 
 ::selection {
-    background: $red-dark;
+    background: $red-light;
     color: white;
 }
 

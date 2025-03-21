@@ -21605,6 +21605,11 @@ h3.section-subtitle {
   font-family: "Space Mono", monospace;
 }
 
+h1.post-title {
+  font-family: "Space Mono", monospace;
+  color: #BCAB79;
+}
+
 ::selection {
   background: #FE5F55;
   color: white;

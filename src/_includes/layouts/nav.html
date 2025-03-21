@@ -15,7 +15,7 @@
                 About
             </a>
 
-            <a href="/posts" class="navbar-item {% if page.url == '/posts/' %}is-active{% endif %}">
+            <a href="/posts" class="navbar-item {% if page.url contains '/posts/' %}is-active{% endif %}">
                 Blog
             </a>
         </div>

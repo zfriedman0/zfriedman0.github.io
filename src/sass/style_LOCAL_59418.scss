@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-<<<<<<< HEAD
 // Import a Google Font
 //@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
@@ -20,13 +19,6 @@ $grey-light: #ebdbb2;
 $blue-dark: #458588;
 $blue-light: #83a598;
 $beige-dark: #665c54;
-=======
-$grey-dark: #14161A;
-$grey-light: #315659;
-$blue-dark: #2978A0;
-$blue-light: #C6E0FF;
-$beige-dark: #BCAB79;
->>>>>>> f061f847abb4a2678cf0e32ff31bc7a7b1429af0
 $beige-light: #EBEBD3;
 $red-light: #cc241d;
 $red-dark: #fb4934;
@@ -110,11 +102,6 @@ h3.section-subtitle {
 
 .title {
     font-family: "Space Mono", monospace;
-}
-
-h1.post-title {
-    font-family: "Space Mono", monospace;
-    color: $beige-dark;
 }
 
 ::selection {
