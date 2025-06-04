@@ -18,12 +18,12 @@ module.exports = function (eleventyConfig) {
         return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(
             'dd LLL yyyy'
         );
-    }); 
+    });
 
     return {
         dir: {
-            input: "src",
-            output: "_site",
+            input: "src/",
+            output: "_site/",
         },
     };
 };
