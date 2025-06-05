@@ -21566,18 +21566,16 @@ has-background-danger.is-hoverable:active {
 .logo::after {
   content: "";
   display: inline-block;
-  width: 0;
-  height: 0;
-  vertical-align: bottom;
-}
-.logo:hover::after {
-  content: "";
-  display: inline-block;
   width: 1ch;
   height: 1em;
-  background-color: #EBEBD3;
+  vertical-align: bottom;
+  background-color: #d5c4a1;
   margin-left: 0.01em;
   animation: blink 1s step-start infinite;
+}
+.logo:hover {
+  color: #EBEBD3;
+  cursor: default;
 }
 
 @keyframes blink {
@@ -21607,8 +21605,12 @@ a.about:hover {
   color: #98971a;
 }
 
-a.blog:hover {
+a.notes:hover {
   color: #458588;
+}
+
+a.card-footer-item:hover {
+  background-color: #EBEBD3;
 }
 
 .content {
@@ -21645,7 +21647,7 @@ footer {
 
 h1.section-title {
   font-family: "Space Mono", monospace;
-  color: #98971a;
+  color: #d5c4a1;
 }
 
 h3.section-subtitle {
@@ -21656,9 +21658,22 @@ h3.section-subtitle {
   font-family: "Space Mono", monospace;
 }
 
+h1.page-title {
+  cursor: default;
+}
+
 h1.post-title {
   font-family: "Space Mono", monospace;
   color: #d5c4a1;
+}
+
+h3.post-title {
+  font-family: "Space Mono", monospace;
+  color: #d5c4a1;
+}
+
+a.post-title:hover {
+  color: #458588;
 }
 
 ::selection {
