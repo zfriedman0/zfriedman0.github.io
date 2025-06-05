@@ -3,22 +3,12 @@
 // Import a Google Font
 //@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-// Set your brand colors
-//$red: #C1292E;
-//$green: #0CCE6B;
-//$yellow: #F1D302;
-//$blue: #7D82B8;
-//$orange: #ED7D3A;
-//$grey-light: #777777;
-//$white: #FDFFFC;
-//$grey-dark: #211F22;
-//$black: #000000;
-
-$grey-dark: #282828;
+$grey-dark: #282828; // bg0 per gruvbox-dark spec
 $grey-light: #ebdbb2;
-$blue-dark: #458588;
-$blue-light: #83a598;
-$beige-dark: #665c54;
+$blue-dark: #458588; // blue per gruvbox-dark spec
+$blue-light: #83a598; // blue per gruvbox-light spec
+//$beige-dark: #665c54;
+$beige-dark: #d5c4a1; // fg2 per gruvbox-dark spec
 $beige-light: #EBEBD3;
 $red-dark: #cc241d;
 $red-light: #fb4934;
@@ -26,6 +16,8 @@ $green-dark: #98971a;
 $green-light: #b8bb26;
 $yellow-dark: #d79921;
 $yellow-light: #fabd2f;
+$purple-dark: #b16286;
+$aqua-dark: #689d6a;
 
 
 // Path to Bulma's sass folder
@@ -36,7 +28,7 @@ $yellow-light: #fabd2f;
   $control-border-width: 5px,
   $input-shadow: none,
   $navbar-item-color: $beige-dark,
-  $footer-background-color: $grey-dark,
+  $footer-background-color: transparent,
   $navbar-background-color: transparent,
 );
 
@@ -53,19 +45,60 @@ $yellow-light: #fabd2f;
     text-decoration: none;
 }
 
-#logo:hover {
-    background-color: transparent;
+.logo {
+  position: relative;
+  font-family: "Space Mono", monospace;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: bottom;
+  }
+
+  &:hover::after {
+    content: '';
+    display: inline-block;
+    width: 1ch;
+    height: 1em;
+    background-color: $beige-light; // use your desired text color, e.g., $yellow
+    margin-left: 0.01em;
+    animation: blink 1s step-start infinite;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.logo:hover {
     color: $beige-light;
+    cursor: default;
 }
 
 a.navbar-item:hover {
     background-color: transparent;
+    //color: $blue-dark;
+}
+
+a.navbar-item.is-active {
+    background-color: transparent; 
     color: $beige-light;
 }
 
-a.navbar-item.is-active{
-    background-color: transparent; 
+a.home:hover {
     color: $red-dark;
+}
+
+a.about:hover {
+    color: $green-dark;
+}
+
+a.blog:hover {
+    color: $blue-dark;
 }
 
 .content {
@@ -82,22 +115,31 @@ p a:hover {
     color: $beige-light;
 }
 
-i:hover {
-    color: $beige-light;
+i {
+    color: $beige-dark;
+}
+
+i.github:hover {
+    color: $purple-dark;
+}
+
+i.linkedin:hover {
+    color: $blue-dark;
 }
 
 footer {
+    color: $beige-dark;
     font-family: "Rubik", sans-serif;
     text-align: center;
 }
 
 h1.section-title {
     font-family: "Space Mono", monospace;
-    color: $beige-dark;
+    color: $green-dark;
 }
 
 h3.section-subtitle {
-    color: $yellow-dark;
+    color: $beige-dark;
 }
 
 .title {
@@ -110,8 +152,8 @@ h1.post-title {
 }
 
 ::selection {
-    background: $red-dark;
-    color: white;
+    background: $purple-dark;
+    color: $beige-light;
 }
 
 @media screen and (max-width: 1025px) {

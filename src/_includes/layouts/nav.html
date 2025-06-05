@@ -2,20 +2,20 @@
     <div class="container">
         <div class="navbar-brand">
             <div class="content">
-                <p class="navbar-item">Zach Friedman</p>
+                <p class="logo navbar-item">Zach Friedman</p>
             </div>
         </div>
         
         <div class="navbar-end">
-            <a href="/" class="navbar-item {% if page.url == '/' %}is-active{% endif %}">
+            <a href="/" class="home navbar-item {% if page.url == '/' %}is-active{% endif %}">
                 Home
             </a>
 
-            <a href="/about" class="navbar-item {% if page.url == '/about/' %}is-active{% endif %}">
+            <a href="/about" class="about navbar-item {% if page.url == '/about/' %}is-active{% endif %}">
                 About
             </a>
 
-            <a href="/posts" class="navbar-item {% if page.url contains '/posts/' %}is-active{% endif %}">
+            <a href="/posts" class="blog navbar-item {% if page.url contains '/posts/' %}is-active{% endif %}">
                 Blog
             </a>
         </div>
