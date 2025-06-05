@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
     // Watch the 'css' directory for changes
     eleventyConfig.addWatchTarget('src/sass');
 
-    // Copy the 'css' directory to the output (_site folder)
+    // Copy the compiled CSS directory to the output folder (_site/css folder)
     eleventyConfig.addPassthroughCopy('css');
 
     eleventyConfig.addFilter('readableDate', (dateObj) => {
@@ -20,10 +20,14 @@ module.exports = function (eleventyConfig) {
         );
     });
 
+    eleventyConfig.addCollection("notes", function (collectionApi) {
+        return collectionApi.getFilteredByTag("notes").sort((a, b) => b.date - a.date);
+    });
+
     return {
         dir: {
             input: "src/",
-            output: "_site/",
+            output: "_site",
         },
     };
 };

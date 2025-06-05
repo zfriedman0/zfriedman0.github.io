@@ -52,19 +52,17 @@ $aqua-dark: #689d6a;
   &::after {
     content: '';
     display: inline-block;
-    width: 0;
-    height: 0;
-    vertical-align: bottom;
-  }
-
-  &:hover::after {
-    content: '';
-    display: inline-block;
     width: 1ch;
     height: 1em;
-    background-color: $beige-light; // use your desired text color, e.g., $yellow
+    vertical-align: bottom;
+    background-color: $beige-dark; // use your desired text color, e.g., $yellow
     margin-left: 0.01em;
     animation: blink 1s step-start infinite;
+  }
+
+  &:hover {
+    color: $beige-light;
+    cursor: default;
   }
 }
 
@@ -97,8 +95,12 @@ a.about:hover {
     color: $green-dark;
 }
 
-a.blog:hover {
+a.notes:hover {
     color: $blue-dark;
+}
+
+a.card-footer-item:hover {
+    background-color: $beige-light;
 }
 
 .content {
@@ -135,7 +137,7 @@ footer {
 
 h1.section-title {
     font-family: "Space Mono", monospace;
-    color: $green-dark;
+    color: $beige-dark;
 }
 
 h3.section-subtitle {
@@ -146,9 +148,22 @@ h3.section-subtitle {
     font-family: "Space Mono", monospace;
 }
 
+h1.page-title {
+    cursor: default;
+}
+
 h1.post-title {
     font-family: "Space Mono", monospace;
     color: $beige-dark;
+}
+
+h3.post-title {
+    font-family: "Space Mono", monospace;
+    color: $beige-dark;
+}
+
+a.post-title:hover {
+    color: $blue-dark;
 }
 
 ::selection {

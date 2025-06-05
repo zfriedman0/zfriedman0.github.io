@@ -1,34 +1,21 @@
 ---
-title: Blog
-subtitle: Blog
+title: Notes - Zach Friedman
+subtitle: Notes
 layout: layouts/page.html
 ---
 
 <section class="postlist mt-3 pt-3">
     <div class="container">
-        <p>This is the place to read about what I've been up to. Use filters to narrow down what you see.</p>
-        <div class="columns">
-            {% for post in collections.post | reverse %}
-                {% if loop.index0 < 3 %}
-                    <div class="column">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title">
-                                    {{ post.data.title }}
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    {{ post.data.description }}
-                                </div>
-                            </div>
-                            <footer class="card-footer">
-                                <a href="{{ post.url }}" class="button is-fullwidth is-link card-footer-item">Read more</a>
-                            </footer>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
+        <div class="container">
+            <article class="post">
+                {% for note in collections.notes %}
+                    <h3 class="post-title mb-1"><a class="post-title" href="{{ note.url }}">{{ note.data.title }}</a></h3>
+                    <time class="post-date is-size-9" datetime="{{ note.date }}">
+                        {{ note.date | readableDate }}
+                    </time>
+                    <p class="post-desc mt-2">{{ note.data.description }}</p>
+                {% endfor %}
+            </article>
         </div>
     </div>
 </section>
