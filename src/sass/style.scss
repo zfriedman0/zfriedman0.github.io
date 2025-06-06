@@ -1,15 +1,11 @@
 @charset "utf-8";
 
-// Import a Google Font
-//@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 $grey-dark: #282828; // bg0 per gruvbox-dark spec
 $grey-light: #ebdbb2;
+$beige-dark: #d5c4a1; // fg2 per gruvbox-dark spec
+$beige-light: #ebebd3;
 $blue-dark: #458588; // blue per gruvbox-dark spec
 $blue-light: #83a598; // blue per gruvbox-light spec
-//$beige-dark: #665c54;
-$beige-dark: #d5c4a1; // fg2 per gruvbox-dark spec
-$beige-light: #EBEBD3;
 $red-dark: #cc241d;
 $red-light: #fb4934;
 $green-dark: #98971a;
@@ -21,19 +17,52 @@ $aqua-dark: #689d6a;
 
 
 // Path to Bulma's sass folder
-@use "../../node_modules/bulma/sass" with (
+@use "../../node_modules/bulma/sass/utilities" with (
   $family-primary: '"Rubik", sans-serif',
   $primary: $grey-dark,
   $link: $beige-dark,
-  $control-border-width: 5px,
-  $input-shadow: none,
-  $navbar-item-color: $beige-dark,
-  $footer-background-color: transparent,
-  $navbar-background-color: transparent,
+  $control-border-width: 10px,
 );
+
+@use "../../node_modules/bulma/sass/form" with (
+    $input-shadow: none
+);
+
+@use "../../node_modules/bulma/sass/components/navbar" with (
+    $navbar-item-color: $beige-dark,
+    $navbar-background-color: transparent
+);
+
+@use "../../node_modules/bulma/sass/layout/footer" with (
+    $footer-background-color: transparent
+);
+
+@forward "../../node_modules/bulma/sass/base";
+@forward "../../node_modules/bulma/sass/elements/content";
+@forward "../../node_modules/bulma/sass/elements/title";
+@forward "../../node_modules/bulma/sass/grid/columns";
+@forward "../../node_modules/bulma/sass/helpers/position";
+@forward "../../node_modules/bulma/sass/helpers/typography";
+@forward "../../node_modules/bulma/sass/helpers/spacing";
+@forward "../../node_modules/bulma/sass/helpers/visibility";
+@forward "../../node_modules/bulma/sass/layout/container";
+@forward "../../node_modules/bulma/sass/layout/hero";
+@forward "../../node_modules/bulma/sass/layout/section";
+
+@forward "../../node_modules/bulma/sass/themes";
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-content {
+    flex: 1;
+}
 
 .navbar {
     font-family: "Space Mono", monospace;
@@ -55,7 +84,7 @@ $aqua-dark: #689d6a;
     width: 1ch;
     height: 1em;
     vertical-align: bottom;
-    background-color: $beige-dark; // use your desired text color, e.g., $yellow
+    background-color: $beige-dark;
     margin-left: 0.01em;
     animation: blink 1s step-start infinite;
   }
@@ -79,42 +108,68 @@ $aqua-dark: #689d6a;
 
 a.navbar-item:hover {
     background-color: transparent;
-    //color: $blue-dark;
 }
 
-a.navbar-item.is-active {
-    background-color: transparent; 
-    color: $beige-light;
-}
+//a.navbar-item.is-active {
+//    background-color: transparent; 
+//    color: $beige-light;
+//}
 
 a.home:hover {
     color: $red-dark;
+}
+
+a.home.is-active {
+    color: $red-dark;
+    background-color: transparent;
+}
+
+a.home.is-active:hover {
+    color: $red-light;
 }
 
 a.about:hover {
     color: $green-dark;
 }
 
+a.about.is-active {
+    color: $green-dark;
+    background-color: transparent;
+}
+
+a.about.is-active:hover {
+    color: $green-light;
+}
+
 a.notes:hover {
     color: $blue-dark;
+}
+
+a.notes.is-active {
+    color: $blue-dark;
+    background-color: transparent;
+}
+
+a.notes.is-active:hover {
+    color: $blue-light;
 }
 
 a.card-footer-item:hover {
     background-color: $beige-light;
 }
 
+a.post-title {
+    text-decoration: underline;
+}
+
+body {
+    color: $beige-dark;
+    font-family: "Rubik", sans-serif;
+}
+
 .content {
     padding-top: 1rem;
     padding-bottom: 1rem;
-}
-
-h1.page-title {
-    font-family: "Space Mono", sans-serif;
-    color: $beige-dark;
-}
-
-p a:hover {
-    color: $beige-light;
 }
 
 i {
@@ -129,15 +184,21 @@ i.linkedin:hover {
     color: $blue-dark;
 }
 
-footer {
+h1.page-title {
+    font-family: "Space Mono", sans-serif;
     color: $beige-dark;
-    font-family: "Rubik", sans-serif;
-    text-align: center;
+    cursor: default;
 }
 
 h1.section-title {
     font-family: "Space Mono", monospace;
     color: $beige-dark;
+}
+
+h1.post-title {
+    font-family: "Space Mono", monospace;
+    color: $beige-dark;
+    
 }
 
 h3.section-subtitle {
@@ -146,15 +207,6 @@ h3.section-subtitle {
 
 .title {
     font-family: "Space Mono", monospace;
-}
-
-h1.page-title {
-    cursor: default;
-}
-
-h1.post-title {
-    font-family: "Space Mono", monospace;
-    color: $beige-dark;
 }
 
 h3.post-title {
@@ -166,8 +218,46 @@ a.post-title:hover {
     color: $blue-dark;
 }
 
+p {
+    color: #ABB1AC;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+p a:hover {
+    color: $beige-light;
+}
+
+p.footer-text {
+    color: $beige-dark;
+    cursor: default;
+}
+
+footer {
+    color: $beige-dark;
+    font-family: "Space Mono", monospace;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.8rem;
+
+    .content {
+        text-align: center;
+    }
+
+    .footer-text {
+        margin-bottom: 0.5rem;
+    }
+
+    i {
+        margin: 0 0.2rem;
+        font-size: 1.2rem;
+    }
+}
+
 ::selection {
-    background: $purple-dark;
+    background: $aqua-dark;
     color: $beige-light;
 }
 
@@ -177,6 +267,6 @@ a.post-title:hover {
     }
 
     .navbar-end {
-        display: flex !important;
+        display: inline-flex !important;
     }
 }
