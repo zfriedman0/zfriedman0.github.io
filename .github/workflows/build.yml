@@ -20,6 +20,7 @@ jobs:
       - name: Install dependencies and build
         run: |
           npm ci
+          npx sass src/sass:css
           npm run build
 
       - name: Deploy
