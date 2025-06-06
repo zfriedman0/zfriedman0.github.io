@@ -8,11 +8,13 @@
         <script src="https://kit.fontawesome.com/761e73f4ac.js" crossorigin="anonymous"></script>
         <title>{{ title }}</title>
     </head>
-    <body>
-        <header>{% include "./nav.html" %}</header>
-        <main>
-            {{ content }}
-        </main>
+    <body class="site">
+        <div class="site-content">
+            <header>{% include "./nav.html" %}</header>
+            <main>
+                {{ content }}
+            </main>
+        </div>
         <footer>{% include "./footer.html" %}</footer>
     </body>
 </html>
