@@ -41,10 +41,10 @@ $aqua-dark: #689d6a;
 @forward "../../node_modules/bulma/sass/elements/content";
 @forward "../../node_modules/bulma/sass/elements/title";
 @forward "../../node_modules/bulma/sass/grid/columns";
-@forward "../../node_modules/bulma/sass/helpers/position";
-@forward "../../node_modules/bulma/sass/helpers/typography";
+//@forward "../../node_modules/bulma/sass/helpers/position";
+//@forward "../../node_modules/bulma/sass/helpers/typography";
 @forward "../../node_modules/bulma/sass/helpers/spacing";
-@forward "../../node_modules/bulma/sass/helpers/visibility";
+//@forward "../../node_modules/bulma/sass/helpers/visibility";
 @forward "../../node_modules/bulma/sass/layout/container";
 @forward "../../node_modules/bulma/sass/layout/hero";
 @forward "../../node_modules/bulma/sass/layout/section";
@@ -198,7 +198,7 @@ h1.section-title {
 h1.post-title {
     font-family: "Space Mono", monospace;
     color: $beige-dark;
-    text-decoration: underline;
+    //text-decoration: underline;
 }
 
 h3.section-subtitle {
