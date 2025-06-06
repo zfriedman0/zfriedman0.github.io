@@ -6,16 +6,16 @@ layout: layouts/page.html
 
 <section class="postlist mt-3 pt-3">
     <div class="container">
-        <div class="container">
-            <article class="post">
-                {% for note in collections.notes %}
-                    <h3 class="post-title mb-1"><a class="post-title" href="{{ note.url }}">{{ note.data.title }}</a></h3>
+        <article class="post">
+            {% for note in collections.notes %}
+                <h3 class="post-title mb-1"><a class="post-title" href="{{ note.url }}">{{ note.data.title }}</a></h3>
+                <p class="post-date">
                     <time class="post-date is-size-9" datetime="{{ note.date }}">
                         {{ note.date | readableDate }}
                     </time>
-                    <p class="post-desc mt-2">{{ note.data.description }}</p>
-                {% endfor %}
-            </article>
-        </div>
+                </p>
+                <p class="post-desc mt-2">{{ note.data.description }}</p>
+            {% endfor %}
+        </article>
     </div>
 </section>
