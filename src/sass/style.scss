@@ -198,7 +198,7 @@ h1.section-title {
 h1.post-title {
     font-family: "Space Mono", monospace;
     color: $beige-dark;
-    
+    text-decoration: underline;
 }
 
 h3.section-subtitle {
@@ -230,6 +230,10 @@ p a:hover {
     color: $beige-light;
 }
 
+p a {
+    text-decoration: underline;
+}
+
 p.footer-text {
     color: $beige-dark;
     cursor: default;
@@ -240,7 +244,7 @@ footer {
     font-family: "Space Mono", monospace;
     text-align: center;
     padding: 1rem 0;
-    font-size: 0.8rem;
+    font-size: 1rem;
 
     .content {
         text-align: center;
