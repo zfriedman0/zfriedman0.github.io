@@ -34,7 +34,8 @@ $aqua-dark: #689d6a;
 );
 
 @use "../../node_modules/bulma/sass/layout/footer" with (
-    $footer-background-color: transparent
+    $footer-background-color: transparent,
+    $footer-padding: 0.3rem
 );
 
 @forward "../../node_modules/bulma/sass/base";
@@ -197,9 +198,14 @@ h1.section-title {
 
 h1.post-title {
     font-family: "Space Mono", monospace;
-    color: $beige-dark;
+    color: $blue-dark;
+    cursor: default;
     //text-decoration: underline;
 }
+
+h1.post-title:hover {
+        color: $blue-light;
+    }
 
 h3.section-subtitle {
     color: $beige-dark;

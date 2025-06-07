@@ -1,9 +1,9 @@
 const { DateTime } = require('luxon');
 
 module.exports = function (eleventyConfig) {
-    //eleventyConfig.setBrowserSyncConfig({
-    //    files: '_site/css/**/*.css'
-    //});
+    eleventyConfig.setBrowserSyncConfig({
+        files: '_site/css/**/*.css'
+    });
 
     // Copy `img/favicon/` to `_site/`
     eleventyConfig.addPassthroughCopy({ "src/img/favicon.ico": "/" });

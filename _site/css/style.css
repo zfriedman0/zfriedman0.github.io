@@ -1874,7 +1874,7 @@ a.navbar-item.is-active, a.navbar-item.is-selected,
 .footer {
   --bulma-footer-background-color: transparent;
   --bulma-footer-color: false;
-  --bulma-footer-padding: 3rem 1.5rem 6rem;
+  --bulma-footer-padding: 0.3rem;
   background-color: var(--bulma-footer-background-color);
   padding: var(--bulma-footer-padding);
 }
@@ -8114,7 +8114,12 @@ h1.section-title {
 
 h1.post-title {
   font-family: "Space Mono", monospace;
-  color: #d5c4a1;
+  color: #458588;
+  cursor: default;
+}
+
+h1.post-title:hover {
+  color: #83a598;
 }
 
 h3.section-subtitle {
