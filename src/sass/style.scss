@@ -1,11 +1,12 @@
 @charset "utf-8";
 
-$grey-dark: #282828; // bg0 per gruvbox-dark spec
+// https://github.com/morhetz/gruvbox
+$grey-dark: #282828;
 $grey-light: #ebdbb2;
-$beige-dark: #d5c4a1; // fg2 per gruvbox-dark spec
+$beige-dark: #d5c4a1;
 $beige-light: #ebebd3;
-$blue-dark: #458588; // blue per gruvbox-dark spec
-$blue-light: #83a598; // blue per gruvbox-light spec
+$blue-dark: #458588;
+$blue-light: #83a598;
 $red-dark: #cc241d;
 $red-light: #fb4934;
 $green-dark: #98971a;
@@ -16,7 +17,8 @@ $purple-dark: #b16286;
 $aqua-dark: #689d6a;
 
 
-// Path to Bulma's sass folder
+// Importing Bulma components as-needed.
+// Would like to get total CSS imports as low as possible.
 @use "../../node_modules/bulma/sass/utilities" with (
   $family-primary: '"Rubik", sans-serif',
   $primary: $grey-dark,
@@ -55,6 +57,7 @@ $aqua-dark: #689d6a;
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+// Custom rules
 .site {
     display: flex;
     flex-direction: column;
@@ -198,14 +201,10 @@ h1.section-title {
 
 h1.post-title {
     font-family: "Space Mono", monospace;
-    color: $blue-dark;
+    color: $beige-dark;
     cursor: default;
     //text-decoration: underline;
 }
-
-h1.post-title:hover {
-        color: $blue-light;
-    }
 
 h3.section-subtitle {
     color: $beige-dark;
@@ -226,18 +225,12 @@ a.post-title:hover {
 
 p {
     color: #ABB1AC;
-
     a {
         text-decoration: underline;
+        &:hover {
+            color: $beige-light;
+        }
     }
-}
-
-p a:hover {
-    color: $beige-light;
-}
-
-p a {
-    text-decoration: underline;
 }
 
 p.footer-text {
