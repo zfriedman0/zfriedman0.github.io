@@ -7979,6 +7979,11 @@ table th {
   --bulma-shadow: 0 0.5em 1em -0.125em hsla(var(--bulma-shadow-h), var(--bulma-shadow-s), var(--bulma-shadow-l), 0.1), 0 0px 0 1px hsla(var(--bulma-shadow-h), var(--bulma-shadow-s), var(--bulma-shadow-l), 0.02);
 }
 
+.content {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .site {
   display: flex;
   flex-direction: column;
@@ -7991,17 +7996,20 @@ table th {
 
 .navbar {
   font-family: "Space Mono", monospace;
+  background-color: transparent;
 }
-
 .navbar a {
   text-align: center;
   padding: 12px 16px;
-  text-decoration: none;
 }
 
 .logo {
   position: relative;
   font-family: "Space Mono", monospace;
+  cursor: default;
+}
+.logo:hover {
+  color: #ebebd3;
 }
 .logo::after {
   content: "";
@@ -8013,61 +8021,43 @@ table th {
   margin-left: 0.01em;
   animation: blink 1s step-start infinite;
 }
-.logo:hover {
-  color: #ebebd3;
-  cursor: default;
-}
 
 @keyframes blink {
   50% {
     opacity: 0;
   }
 }
-.logo:hover {
-  color: #ebebd3;
-  cursor: default;
-}
-
-a.navbar-item:hover {
+a.navbar-item:active, a.navbar-item:focus, a.navbar-item:hover {
   background-color: transparent;
 }
-
-a.home:hover {
+a.navbar-item.home:hover {
   color: #cc241d;
 }
-
-a.home.is-active {
+a.navbar-item.home.is-active {
   color: #cc241d;
   background-color: transparent;
 }
-
-a.home.is-active:hover {
+a.navbar-item.home.is-active:hover {
   color: #fb4934;
 }
-
-a.about:hover {
+a.navbar-item.about:hover {
   color: #98971a;
 }
-
-a.about.is-active {
+a.navbar-item.about.is-active {
   color: #98971a;
   background-color: transparent;
 }
-
-a.about.is-active:hover {
+a.navbar-item.about.is-active:hover {
   color: #b8bb26;
 }
-
-a.notes:hover {
+a.navbar-item.notes:hover {
   color: #458588;
 }
-
-a.notes.is-active {
+a.navbar-item.notes.is-active {
   color: #458588;
   background-color: transparent;
 }
-
-a.notes.is-active:hover {
+a.navbar-item.notes.is-active:hover {
   color: #83a598;
 }
 
@@ -8078,27 +8068,13 @@ a.card-footer-item:hover {
 a.post-title {
   text-decoration: underline;
 }
+a.post-title:hover {
+  color: #458588;
+}
 
 body {
   color: #d5c4a1;
   font-family: "Rubik", sans-serif;
-}
-
-.content {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-i {
-  color: #d5c4a1;
-}
-
-i.github:hover {
-  color: #b16286;
-}
-
-i.linkedin:hover {
-  color: #458588;
 }
 
 h1.page-title {
@@ -8119,6 +8095,7 @@ h1.post-title {
 }
 
 h3.section-subtitle {
+  font-family: "Space Mono", monospace;
   color: #d5c4a1;
 }
 
@@ -8131,10 +8108,6 @@ h3.post-title {
   color: #d5c4a1;
 }
 
-a.post-title:hover {
-  color: #458588;
-}
-
 p {
   color: #ABB1AC;
 }
@@ -8144,7 +8117,6 @@ p a {
 p a:hover {
   color: #ebebd3;
 }
-
 p.footer-text {
   color: #d5c4a1;
   cursor: default;
@@ -8164,8 +8136,15 @@ footer .footer-text {
   margin-bottom: 0.5rem;
 }
 footer i {
+  color: #d5c4a1;
   margin: 0 0.2rem;
   font-size: 1.2rem;
+}
+footer i.github:hover {
+  color: #b16286;
+}
+footer i.linkedin:hover {
+  color: #458588;
 }
 
 ::selection {
@@ -8175,10 +8154,13 @@ footer i {
 
 @media screen and (max-width: 1025px) {
   .navbar-brand {
-    display: none !important;
+    display: inline-flex !important;
   }
   .navbar-end {
     display: inline-flex !important;
+  }
+  .content {
+    padding: 20px;
   }
 }
 
